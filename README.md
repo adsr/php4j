@@ -1,8 +1,10 @@
 # php4j
 
 php4j is PHP embedded in Java. It allows you to call PHP code from Java in the
-same process. Alternatives to this are shelling out to PHP (forking) or calling
-PHP over the network.
+same process. See `PhpTest.java` for example usage.
+
+Alternatives to this are shelling out to PHP (forking) or calling PHP over the
+network.
 
 ### Requirements
 
