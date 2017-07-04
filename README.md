@@ -8,21 +8,23 @@ network.
 
 ### Requirements
 
-* `php-dev` (>= 7.0.0)
-* `openjdk-8-jdk` or `openjdk-9-jdk`
+* PHP compiled with `--enable-embed` (>= 7.0.0)
+* JDK (>= 8, earlier versions probably work, but untested)
 
-`javac`, `javah`, and `php-config` are expected to be in `PATH`.
+On Debian/Ubuntu this is `openjdk-*-jdk` and `libphp7.*-embed`.
 
 ### Building
+
+`javac`, `javah`, and `php-config` are expected to be in `PATH`.
 
     $ make
 
 ### Testing
 
-    $ make test
-
 This will compile and run `PhpTest.java` which executes `test.php` and prints
 the result.
+
+    $ make test
 
 ### Limitations
 
