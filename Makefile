@@ -1,10 +1,10 @@
 SHELL=/bin/bash
 
-java_home=$(shell dirname $$(dirname $$(readlink -f $$(which javac))))
-java_includes:=$(shell find "$(java_home)/include" -type d | xargs -rn1 printf "-I%s ")
+JAVA_HOME?=$(shell dirname $$(dirname $$(readlink -f $$(which javac))))
+java_includes:=$(shell find "$(JAVA_HOME)/include" -type d | xargs -rn1 printf "-I%s ")
 php_includes:=$(shell php-config --includes)
 php_libs:=$(shell echo "$$(php-config --prefix)/lib")
-java_libs=$(shell echo "$(java_home)/jre/lib/amd64/server")
+java_libs=$(shell echo "$(JAVA_HOME)/jre/lib/amd64/server")
 
 all: libphp4j.so
 
