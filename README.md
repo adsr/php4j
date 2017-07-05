@@ -15,16 +15,16 @@ On Debian/Ubuntu this is `openjdk-*-jdk` and `libphp7.*-embed`.
 
 ### Building
 
-`javac`, `javah`, and `php-config` are expected to be in `PATH`.
-
     $ make
+
+`javac`, `javah`, and `php-config` are expected to be in `PATH`.
 
 ### Testing
 
+    $ make test
+
 This will compile and run `PhpTest.java` which executes `test.php` and prints
 the result.
-
-    $ make test
 
 ### Limitations
 
