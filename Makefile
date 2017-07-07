@@ -17,16 +17,24 @@ PhpTest.class: PhpTest.java libphp4j.so
 libphp4j.so: php4j.o
 	$(CC) -g -fPIC -shared -o libphp4j.so php4j.o -lphp7
 
-php4j.o: php4j.c com_github_adsr_php4j_Php.h
+php4j.o: php4j.c com_github_adsr_php4j_Php.h com_github_adsr_php4j_Zval.h
 	$(CC) -g -fPIC $(php_includes) $(java_includes) -c php4j.c -o php4j.o
 
 com_github_adsr_php4j_Php.h: Php.class
 	javah com.github.adsr.php4j.Php
 
-Php.class: Php.java
+com_github_adsr_php4j_Zval.h: Zval.class
+	javah com.github.adsr.php4j.Zval
+
+Php.class: Php.java Zval.class
 	javac Php.java
 
+Zval.class: Zval.java
+	javac Zval.java
+
 clean:
-	rm -f PhpTest.class libphp4j.so php4j.o com_github_adsr_php4j_Php.h Php.class
+	rm -f libphp4j.so php4j.o
+	rm -f com_github_adsr_php4j_Php.h com_github_adsr_php4j_Zval.h
+	rm -f Php.class Zval.class PhpTest.class
 
 .PHONY: all test clean

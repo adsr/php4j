@@ -6,5 +6,5 @@ public class Php {
     }
     public static native void init();
     public static native void shutdown();
-    public static native String execString(String code);
+    public static native Zval execString(String code);
 }
