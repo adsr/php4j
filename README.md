@@ -29,11 +29,11 @@ the result.
 ### Limitations
 
 * Not thread-safe
-* Currently all values are returned as JSON-encoded strings
+* `Zval`s must be freed manually (via `dispose` method)
 
 ### TODO
 
-* A `Zval` type instead of JSON'ing everything
+* Fix leak in getHash
 * Support for calling Java from PHP
 * Support for exceptions, errors, SAPI options, SAPI callbacks
 * Control of request init/shutdown
